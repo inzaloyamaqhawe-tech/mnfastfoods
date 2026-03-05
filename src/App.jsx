@@ -17,7 +17,7 @@ const platters = [
 
 const menuItems = [...plates, ...platters];
 
-const businessWhatsApp = 'https://wa.me/27785550002';
+const businessWhatsApp = 'https://wa.me/27671430117';
 const ownerWhatsApp = 'https://wa.me/27606397923';
 const facebookPage = 'https://www.facebook.com/share/17LDeu3fw4/';
 
@@ -119,8 +119,8 @@ export default function App() {
             <h2>Visit Us</h2>
             <p>Durban Workshop, Maimai</p>
             <p>Container Site (Mnce Shisanyama) — landmark shown above</p>
-            <a className="inline-link" href="tel:+27785550002">
-              Call: +27 78 555 0002
+            <a className="inline-link" href="tel:+27671430117">
+              Call: +27 67 143 0117
             </a>
           </div>
         </div>
@@ -227,7 +227,7 @@ export default function App() {
         <section className="photos-note" id="contact">
           <h3>Contact Us</h3>
           <p>
-            For food orders: <a className="inline-link" href="tel:+27785550002">+27 78 555 0002</a>
+            For food orders: <a className="inline-link" href="tel:+27671430117">+27 67 143 0117</a>
           </p>
           <p>
             For website questions (Inzalo Yamaqhawe Technologies), send a direct WhatsApp message below.
