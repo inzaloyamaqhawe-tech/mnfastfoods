@@ -1,0 +1,1 @@
+﻿Rebuild trigger: remove stale cached Pages artifacts.
