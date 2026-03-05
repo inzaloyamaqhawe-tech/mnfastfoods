@@ -27,10 +27,6 @@ export default function App() {
   const [customerPhone, setCustomerPhone] = useState('');
   const [orderNotes, setOrderNotes] = useState('');
 
-  const [inqName, setInqName] = useState('');
-  const [inqPhone, setInqPhone] = useState('');
-  const [inqMessage, setInqMessage] = useState('');
-
   const cartItems = useMemo(
     () => menuItems.filter((item) => (cart[item.id] || 0) > 0).map((item) => ({ ...item, qty: cart[item.id] || 0 })),
     [cart]
@@ -74,18 +70,8 @@ export default function App() {
     return `${businessWhatsApp}?text=${encodeURIComponent(message)}`;
   }, [cartItems, customerName, customerPhone, total, orderNotes]);
 
-  const inquiryWhatsAppLink = useMemo(() => {
-    const message = [
-      'Hello Inzalo Yamaqhawe Technologies, I have a question.',
-      '',
-      `Name: ${inqName || 'Not provided'}`,
-      `Phone: ${inqPhone || 'Not provided'}`,
-      '',
-      `Message: ${inqMessage || 'No message provided'}`,
-    ].join('\n');
-
-    return `${ownerWhatsApp}?text=${encodeURIComponent(message)}`;
-  }, [inqName, inqPhone, inqMessage]);
+  const inzaloFixedMessageLink =
+    `${ownerWhatsApp}?text=${encodeURIComponent('HI, Inzalo Yamaqhawe Technologies, I am interested in your designing, may you please provide me your services list?')}`;
 
   return (
     <div className="site">
@@ -229,41 +215,14 @@ export default function App() {
           <p>
             For food orders: <a className="inline-link" href="tel:+27671430117">+27 67 143 0117</a>
           </p>
-          <p>
-            For website questions (Inzalo Yamaqhawe Technologies), send a direct WhatsApp message below.
-          </p>
-
-          <div className="form-grid">
-            <input
-              type="text"
-              placeholder="Your name"
-              value={inqName}
-              onChange={(event) => setInqName(event.target.value)}
-            />
-            <input
-              type="text"
-              placeholder="Your phone number"
-              value={inqPhone}
-              onChange={(event) => setInqPhone(event.target.value)}
-            />
-            <textarea
-              placeholder="Your question or message"
-              rows={3}
-              value={inqMessage}
-              onChange={(event) => setInqMessage(event.target.value)}
-            />
-          </div>
-
-          <a className="btn secondary" href={inquiryWhatsAppLink} target="_blank" rel="noreferrer">
-            Send Question to Inzalo Yamaqhawe Technologies
-          </a>
+          <p>Visit us at Durban Workshop, Maimai, for pickup and walk-in orders.</p>
         </section>
       </main>
 
       <footer className="footer">
         <p>
           Powered by:{' '}
-          <a href={ownerWhatsApp} target="_blank" rel="noreferrer">
+          <a href={inzaloFixedMessageLink} target="_blank" rel="noreferrer">
             INZALO YAMAQHAWE TECHNOLOGIES
           </a>
         </p>
